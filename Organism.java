@@ -14,10 +14,11 @@
 
 public class Organism {
     private String name; // Unique identifier for this individual organism
-    
+
     public Organism() {
         MathAdapt s1 = new MathAdapt();
         name = s1.randomString(10);
+        
     }
     
     public String getName() {

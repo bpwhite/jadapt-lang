@@ -9,7 +9,7 @@ import java.security.SecureRandom;
 
 public class MathAdapt {
 
-    static final String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    static final String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     static SecureRandom rnd = new SecureRandom();
 
     public String randomString( int len ) {
