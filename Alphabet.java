@@ -20,7 +20,7 @@ public class Alphabet {
         for (int i = 0; i < len; i++) {
             String letter_name = m1.randomString(1);
             letters.add(letter_name);
-            System.out.println(letter_name);
+            //System.out.println(letter_name);
             num_letters = i;
         }
         printLetters();
@@ -34,9 +34,10 @@ public class Alphabet {
     void printLetters() {
         //System.out.println("Printing Alphabet: ");
         System.out.println("Letters: ");
-        //System.out.println("Letters: " + letters.getClass().getName());
-        //System.out.println("Num letters: " + letters);
-        // Prints letters as an array
-        System.out.println(Arrays.toString(letters.toArray()));
+        //System.out.println(Arrays.toString(letters.toArray()));
+        for (int i = 0; i < letters.size(); i++) {
+            //System.out.println(Arrays.toString(letters.toArray())[i]);
+            System.out.println("Letter: " + letters.get(i));
+        }
     }
 }
