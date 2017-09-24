@@ -13,9 +13,13 @@ public class Environment {
         Alphabet alphabet = new Alphabet(); // initialize new alphabet
         alphabet.GenerateAlphabet(10);      // spawn letters
         //System.out.println(alphabet.GetLetters());
+        //alphabet.printLetters();
+        
     }
     
     public Alphabet getAlphabet() {
         return alphabet;
     }
+    
+
 }

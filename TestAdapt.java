@@ -10,12 +10,14 @@ import java.util.Arrays;
 public class TestAdapt {
     public static void main(String[] args) {
         
+        // Spawn a new environment
         Environment e1 = new Environment();
+        // Load alphabet
         e1.SpawnAlphabet(10);
+        //e1.printLetters();
         
-        /*
-        Arrays.toString(e1.getAlphabet().getLetters().toArray());
-        */
+        //Arrays.toString(e1.getAlphabet().getLetters().toArray());
+        
         
         Organism o1 = new Organism();
         System.out.println("Name: " + o1.getName());
