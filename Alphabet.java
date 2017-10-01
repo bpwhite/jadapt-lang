@@ -24,7 +24,9 @@ import java.util.Arrays;
 
 public class Alphabet {
     
-    private ArrayList<String> letters = new ArrayList<String>();
+    //private ArrayList<String> letters = new ArrayList<String>();
+    private ArrayList<String[]> letters = new ArrayList<String[]>();
+    
     private int num_letters = 0;
     
     public void GenerateAlphabet( int len ) {
@@ -36,20 +38,28 @@ public class Alphabet {
             String test = "A";
             String[] letter_info = new String[2];
             
-            letters.add(letter_name);
+            letter_info[0] = letter_name;
+            letter_info[1] = test;
+            System.out.println(letter_info[0] + " -> " + letter_info[1]);
+            //letters.add(letter_name);
+            letters.add(letter_info);
             num_letters = i;
         }
 
     }
     
-    public ArrayList<String> getLetters() {
+    public ArrayList<String[]> getLetters() {
         return letters;
     }
     
     void printLetters() {
         System.out.println("Printing Alphabet: ");
         for (int i = 0; i < letters.size(); i++) {
-            System.out.println("Letter: " + letters.get(i));
+            System.out.print("Letter: ");
+            for (int j = 0; j < letters.get(i).length; j++) {
+                System.out.print(letters.get(i)[j] + "\t");
+            }
+            System.out.println("");
         }
     }
 }

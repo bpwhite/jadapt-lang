@@ -34,7 +34,7 @@ public class TestAdapt {
         Environment e1 = new Environment();
         // Load alphabet
         e1.SpawnAlphabet(10);
-
+        
         
         Organism o1 = new Organism();
         System.out.println("Organism Name: " + o1.getName());
