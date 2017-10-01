@@ -19,5 +19,23 @@
 */
 
 public class Force {
+    public double direction;
+    public double magnitude;
+    public String type;
+    
+    private String[] types = {  "Electrostatic",
+                                "Magnetic",
+                                "Van der Waals"
+                                };
+                                
+    public void GenerateForce() {
+        
+        MathAdapt m1 = new MathAdapt();
+        
+        type = types[m1.randomRange(0, 2)];
+        System.out.println(type);
+        
+    }
+    
     
 }

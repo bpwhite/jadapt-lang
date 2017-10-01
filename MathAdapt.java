@@ -24,12 +24,19 @@ import java.security.SecureRandom;
 public class MathAdapt {
 
     static final String AB = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    static SecureRandom rnd = new SecureRandom();
 
     public String randomString( int len ) {
+        SecureRandom rnd = new SecureRandom();
         StringBuilder sb = new StringBuilder( len );
         for( int i = 0; i < len; i++ ) 
             sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );
         return sb.toString();
+    }
+    
+    public int randomRange( int min, int max ) {
+        SecureRandom rnd = new SecureRandom();
+        int range = max - min + 1;
+        int x = rnd.nextInt(range) + min;
+        return x;
     }
 }

@@ -1,5 +1,5 @@
 /* 
-    Molecule class.
+    Molecule class. Group of covalently bonded letters.
     
     Copyright (C) 2017 Bryan P. White
 
