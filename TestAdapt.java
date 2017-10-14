@@ -35,6 +35,8 @@ public class TestAdapt {
         // Load alphabet
         e1.SpawnAlphabet(10);
         
+        // Generate molecules
+        
         
         Organism o1 = new Organism();
         System.out.println("Organism Name: " + o1.getName());

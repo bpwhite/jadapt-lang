@@ -20,4 +20,11 @@
 
 public class Molecule {
     
+    public String[] genome;
+    
+    public class SpawnMolecule(Alphabet alphabet, int len) {
+        
+                
+    }
+    
 }

@@ -24,7 +24,8 @@ import java.util.Arrays;
 
 public class Alphabet {
     
-    private ArrayList<String[]> letters = new ArrayList<String[]>();
+    //private ArrayList<String[]> letters = new ArrayList<String[]>();
+    private ArrayList<Letter> letters = new ArrayList<Letter>();
     
     private int num_letters = 0;
     private int max_length = 26;
@@ -44,6 +45,10 @@ public class Alphabet {
         
         // Create len # of letters
         for (int i = 0; i < len; i++) {
+            // Combine letter components
+            //String[] letter_info = new String[3];
+            
+            Letter letter = new Letter();
             
             // Create Letter name
             // Ensure letter names are not duplicated
@@ -70,32 +75,40 @@ public class Alphabet {
             
             String test = "A";
             
-            // Combine letter components
-            String[] letter_info = new String[3];
             
-            letter_info[0] = letter_name;
-            letter_info[1] = test;
-            letter_info[2] = f1.type;
             
-            System.out.println(letter_info[0] + " -> " + letter_info[1]);
-            letters.add(letter_info);
+            //letter_info[0] = letter_name;
+            letter.name = letter_name;
+            //letter_info[1] = test;
+            letter.desc = test;
+            //letter_info[2] = f1.type;
+            letter.force = f1;
+            
+            //System.out.println(letter_info[0] + " -> " + letter_info[1]);
+            System.out.println(letter.name + " -> " + letter.force.type);
+            
+            //System.exit(0);
+            letters.add(letter);
             num_letters = i;
         }
 
     }
     
-    public ArrayList<String[]> getLetters() {
+    public ArrayList<Letter> getLetters() {
         return letters;
     }
     
     void printLetters() {
         System.out.println("Printing Alphabet: ");
-        for (int i = 0; i < letters.size(); i++) {
+        /*for (int i = 0; i < letters.size(); i++) {
             System.out.print("Letter: ");
             for (int j = 0; j < letters.get(i).length; j++) {
                 System.out.print(letters.get(i)[j] + "\t");
             }
             System.out.println("");
         }
+        */
     }
+    
+    
 }

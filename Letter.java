@@ -1,6 +1,6 @@
 /* jadapt-lang
 
-    Generates environmental variables for jadapt-lang
+    Letter class for jadapt-lang
     
     Copyright (C) 2017 Bryan P. White
 
@@ -19,21 +19,10 @@
     
 */
 
-public class Environment {
+class Letter {
     
-    private Alphabet alphabet;
+    public String name;
+    public Force force;
+    public String desc;
     
-    public void SpawnAlphabet(int len) {
-        Alphabet alphabet = new Alphabet(); // initialize new alphabet
-        alphabet.GenerateAlphabet(10);      // spawn letters
-        //System.out.println(alphabet.GetLetters());
-        //alphabet.printLetters();
-        
-    }
-    
-    public Alphabet getAlphabet() {
-        return alphabet;
-    }
-    
-
 }
