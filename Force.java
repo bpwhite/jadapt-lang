@@ -29,13 +29,8 @@ public class Force {
                                 };
                                 
     public void GenerateForce() {
-        
         MathAdapt m1 = new MathAdapt();
-        
         type = types[m1.randomRange(0, 2)];
-        System.out.println(type);
-        
+
     }
-    
-    
 }

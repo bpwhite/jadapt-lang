@@ -32,15 +32,14 @@ public class TestAdapt {
         
         // Spawn a new environment
         Environment e1 = new Environment();
+        
         // Load alphabet
-        e1.SpawnAlphabet(10);
+        e1.SpawnEnvironment(10);
+        e1.alphabet.printLetters();
         
         // Generate molecules
         
         
-        Organism o1 = new Organism();
-        System.out.println("Organism Name: " + o1.getName());
-    
         
         
     }

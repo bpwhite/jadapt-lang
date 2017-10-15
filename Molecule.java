@@ -24,7 +24,7 @@ public class Molecule {
     
     public class SpawnMolecule(Alphabet alphabet, int len) {
         
-                
+        
     }
     
 }

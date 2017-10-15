@@ -75,19 +75,12 @@ public class Alphabet {
             
             String test = "A";
             
-            
-            
-            //letter_info[0] = letter_name;
+            // Assign letter properties
             letter.name = letter_name;
-            //letter_info[1] = test;
             letter.desc = test;
-            //letter_info[2] = f1.type;
             letter.force = f1;
             
-            //System.out.println(letter_info[0] + " -> " + letter_info[1]);
-            System.out.println(letter.name + " -> " + letter.force.type);
-            
-            //System.exit(0);
+            // Add letters to Alphabet array list
             letters.add(letter);
             num_letters = i;
         }
@@ -100,14 +93,11 @@ public class Alphabet {
     
     void printLetters() {
         System.out.println("Printing Alphabet: ");
-        /*for (int i = 0; i < letters.size(); i++) {
-            System.out.print("Letter: ");
-            for (int j = 0; j < letters.get(i).length; j++) {
-                System.out.print(letters.get(i)[j] + "\t");
-            }
-            System.out.println("");
+        
+        System.out.print("Name\tForce Type\n");
+        for (Letter letter : letters) {
+            System.out.print(letter.name + "\t" + letter.force.type + "\n");
         }
-        */
     }
     
     

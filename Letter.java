@@ -25,4 +25,5 @@ class Letter {
     public Force force;
     public String desc;
     
+    
 }
