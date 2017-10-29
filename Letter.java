@@ -24,6 +24,18 @@ class Letter {
     public String name;
     public Force force;
     public String desc;
+    public double bond_in;
+    public double bond_out;
     
+    public Letter() {
+        MathAdapt m1 = new MathAdapt();
+        bond_in = m1.randomRange(0, 360);
+        bond_out = m1.randomRange(0, 360);
+        while (Math.abs(bond_in - bond_out) < 35) {
+            bond_out = m1.randomRange(0, 360);
+        }
+        
+        
+    }
     
 }

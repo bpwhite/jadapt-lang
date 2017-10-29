@@ -23,6 +23,7 @@ public class Force {
     public double magnitude;
     public String type;
     
+    
     private String[] types = {  "Electrostatic",
                                 "Magnetic",
                                 "Van der Waals"

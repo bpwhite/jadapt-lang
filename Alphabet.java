@@ -90,7 +90,11 @@ public class Alphabet {
         
         System.out.print("Name\tForce Type\n");
         for (Letter letter : letters) {
-            System.out.print(letter.name + "\t" + letter.force.type + "\n");
+            System.out.print(   letter.name + "\t" 
+                                + letter.force.type + "\t"
+                                + letter.bond_in + "\t"
+                                + letter.bond_out 
+                                + "\n");
         }
     }
     

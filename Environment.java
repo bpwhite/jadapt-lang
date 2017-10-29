@@ -22,7 +22,9 @@ import java.util.ArrayList;
 
 public class Environment {
     
+    // Container for the evolutionary alphabet
     public Alphabet alphabet = new Alphabet();
+    // Container for molecules present in the environment
     public ArrayList<Molecule> molecules = new ArrayList<Molecule>();
 
     
