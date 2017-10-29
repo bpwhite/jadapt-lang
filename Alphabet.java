@@ -21,12 +21,10 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.security.SecureRandom;
 
 public class Alphabet {
-    
-    //private ArrayList<String[]> letters = new ArrayList<String[]>();
     private ArrayList<Letter> letters = new ArrayList<Letter>();
-    
     private int num_letters = 0;
     private int max_length = 26;
     
@@ -45,9 +43,6 @@ public class Alphabet {
         
         // Create len # of letters
         for (int i = 0; i < len; i++) {
-            // Combine letter components
-            //String[] letter_info = new String[3];
-            
             Letter letter = new Letter();
             
             // Create Letter name
@@ -64,7 +59,7 @@ public class Alphabet {
                     }
                 }
                 // Add letter to assigned list
-                assigned_letters[i] = letter_name;   
+                assigned_letters[i] = letter_name;
                 unique_string = 1;
             }
             // End Letter name
@@ -84,9 +79,8 @@ public class Alphabet {
             letters.add(letter);
             num_letters = i;
         }
-
     }
-    
+
     public ArrayList<Letter> getLetters() {
         return letters;
     }
@@ -98,6 +92,12 @@ public class Alphabet {
         for (Letter letter : letters) {
             System.out.print(letter.name + "\t" + letter.force.type + "\n");
         }
+    }
+    
+    public Letter drawLetter() {
+        Letter random_letter = letters.get(new SecureRandom().nextInt(letters.size()));
+        
+        return random_letter;
     }
     
     

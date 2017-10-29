@@ -29,17 +29,25 @@ import java.util.Arrays;
 
 public class TestAdapt {
     public static void main(String[] args) {
+        // Environmental Parameters
+        
+        // Starting # of molecules
+        int num_mol         = 5;
+        // Number of letters in the alphabet
+        int alphabet_length = 10;
+        // Number of initial molecules to generate
+        int num_mols = 10;
+        int max_mol_size = 25;
         
         // Spawn a new environment
         Environment e1 = new Environment();
         
-        // Load alphabet
-        e1.SpawnEnvironment(10);
+        // 
+        e1.SpawnEnvironment(alphabet_length, 
+                            num_mols,
+                            max_mol_size);
         e1.alphabet.printLetters();
-        
-        // Generate molecules
-        
-        
+        e1.printMolecules();
         
         
     }

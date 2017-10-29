@@ -17,14 +17,40 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
 */
+import java.util.ArrayList;
 
 public class Molecule {
     
-    public String[] genome;
+    private ArrayList<Letter> genome = new ArrayList<Letter>();
+    private String molecule_id;
     
-    public class SpawnMolecule(Alphabet alphabet, int len) {
+    public void SpawnMolecule(Alphabet alphabet, int len) {
         
+        for (int i = 0; i < len; i++) {
+            genome.add(alphabet.drawLetter());
+        }
         
+        MathAdapt s1 = new MathAdapt();
+        molecule_id = s1.randomString(10);
     }
     
+    public ArrayList<Letter> getGenome() {
+        return genome;
+    }
+    
+    public String getMolID() {
+        return molecule_id;
+    }
+    
+    public String genomeString() {
+        // Return a string version of the concatenated genome (letter) names
+        String genomeStr = "";
+        
+        for (Letter letter : genome) {
+            genomeStr = genomeStr.concat(letter.name);
+        }
+        
+        return genomeStr;
+    }
+
 }
