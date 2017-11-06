@@ -66,8 +66,7 @@ public class Alphabet {
             
             // Create letter Force
             Force f1 = new Force();
-            f1.GenerateForce();
-            
+
             String test = "A";
             
             // Assign letter properties
@@ -88,12 +87,12 @@ public class Alphabet {
     void printLetters() {
         System.out.println("Printing Alphabet: ");
         
-        System.out.print("Name\tForce Type\n");
+        System.out.print("Name\tES_Mag\tBond_In\tBond_Out\n");
         for (Letter letter : letters) {
             System.out.print(   letter.name + "\t" 
-                                + letter.force.type + "\t"
-                                + letter.bond_in + "\t"
-                                + letter.bond_out 
+                                + letter.force.ES_mag + "\t"
+                                + letter.force.bond_in + "\t"
+                                + letter.force.bond_out 
                                 + "\n");
         }
     }

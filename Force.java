@@ -19,19 +19,36 @@
 */
 
 public class Force {
-    public double direction;
-    public double magnitude;
-    public String type;
+    public double ES_dir;
+    public double ES_mag;
+    public String ES_geom;
     
-    
-    private String[] types = {  "Electrostatic",
-                                "Magnetic",
-                                "Van der Waals"
+    public double VW_mag;
+
+    public double bond_in;
+    public double bond_out;
+
+    private String[] geoms = {  "sphere",
+                                "cone"
                                 };
                                 
-    public void GenerateForce() {
-        MathAdapt m1 = new MathAdapt();
-        type = types[m1.randomRange(0, 2)];
+    // "ES" electrostatic type force
+    // "VW" van der waals type force
 
+    public Force() {
+        MathAdapt m1 = new MathAdapt();
+
+        bond_in = m1.randomRange(0, 360);
+        bond_out = m1.randomRange(0, 360);
+        while (Math.abs(bond_in - bond_out) < 35) {
+            bond_out = m1.randomRange(0, 360);
+        }
+        
+        ES_dir = m1.randomRange(0, 360);
+        ES_mag = m1.randomRange(1,500);
+        ES_geom = geoms[m1.randomRange(0, 1)];
+        
+        VW_mag = m1.randomRange(1,10);
     }
+    
 }
