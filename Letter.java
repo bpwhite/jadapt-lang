@@ -25,9 +25,31 @@ class Letter {
     public Force force;
     public String desc;
 
+    // Local Letter Grid
+    private int lg_x_max = 50;
+    private int lg_y_max = 50;
+    
+    private String[][] local_grid = new String[lg_x_max][lg_y_max];
     
     public Letter() {
-        // empty constructor
+        // empty constructoror
+        StericWalker();
     }
     
+    private void StericWalker() {
+        for (int i = 0; i < lg_x_max; i++) {
+            for(int j = 0; j < lg_y_max; j++) {
+                local_grid[i][j] = ".";
+            }
+        }
+    }
+    
+    public void printLocalGrid() {
+        for (int i = 0; i < lg_x_max; i++) {
+            for(int j = 0; j < lg_y_max; j++) {
+                System.out.print(local_grid[i][j]);
+            }
+            System.out.print("\n");
+        }
+    }
 }

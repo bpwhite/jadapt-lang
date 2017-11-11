@@ -34,7 +34,7 @@ public class TestAdapt {
         // Starting # of molecules
         int num_mol         = 5;
         // Number of letters in the alphabet
-        int alphabet_length = 10;
+        int alphabet_length = 3;
         // Number of initial molecules to generate
         int num_mols = 10;
         int max_mol_size = 25;

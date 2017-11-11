@@ -87,13 +87,16 @@ public class Alphabet {
     void printLetters() {
         System.out.println("Printing Alphabet: ");
         
-        System.out.print("Name\tES_Mag\tBond_In\tBond_Out\n");
+        System.out.print("Name\tES_Mag\tBond_In\tBond_Out\tES_Geom\tVW_mag\n");
         for (Letter letter : letters) {
             System.out.print(   letter.name + "\t" 
                                 + letter.force.ES_mag + "\t"
                                 + letter.force.bond_in + "\t"
-                                + letter.force.bond_out 
+                                + letter.force.bond_out + "\t"
+                                + letter.force.ES_geom + "\t"
+                                + letter.force.VW_mag
                                 + "\n");
+            letter.printLocalGrid();
         }
     }
     

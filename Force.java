@@ -19,11 +19,11 @@
 */
 
 public class Force {
-    public double ES_dir;
+    public double ES_dir; // electrostatic
     public double ES_mag;
     public String ES_geom;
     
-    public double VW_mag;
+    public double VW_mag; // van der waals
 
     public double bond_in;
     public double bond_out;
@@ -31,7 +31,8 @@ public class Force {
     private String[] geoms = {  "sphere",
                                 "cone"
                                 };
-                                
+    
+
     // "ES" electrostatic type force
     // "VW" van der waals type force
 
@@ -50,5 +51,7 @@ public class Force {
         
         VW_mag = m1.randomRange(1,10);
     }
+    
+
     
 }

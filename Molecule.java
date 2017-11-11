@@ -24,6 +24,7 @@ public class Molecule {
     private ArrayList<Letter> genome = new ArrayList<Letter>();
     private String molecule_id;
     
+
     public void SpawnMolecule(Alphabet alphabet, int len) {
         
         for (int i = 0; i < len; i++) {
@@ -52,5 +53,6 @@ public class Molecule {
         
         return genomeStr;
     }
+
 
 }
