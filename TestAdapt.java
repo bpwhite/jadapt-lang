@@ -31,12 +31,11 @@ public class TestAdapt {
     public static void main(String[] args) {
         // Environmental Parameters
         
-        // Starting # of molecules
-        int num_mol         = 5;
         // Number of letters in the alphabet
         int alphabet_length = 3;
         // Number of initial molecules to generate
-        int num_mols = 10;
+        int num_mols = 5;
+        int min_mol_size = 3;
         int max_mol_size = 25;
         
         // Spawn a new environment

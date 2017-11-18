@@ -35,10 +35,12 @@ public class Environment {
         alphabet.GenerateAlphabet(alph_len);      // spawn letters
         
         for(int i = 0; i < num_mols; i++) {
+            // Initialize empty molecule
             Molecule molecule = new Molecule();
             MathAdapt m1 = new MathAdapt();
             
             int mol_size = m1.randomRange(1, max_mol_size);
+            // Assign letters to molecule
             molecule.SpawnMolecule(alphabet, mol_size);
             molecules.add(molecule);
         }

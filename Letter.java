@@ -26,28 +26,29 @@ class Letter {
     public String desc;
 
     // Local Letter Grid
-    private int lg_x_max = 50;
-    private int lg_y_max = 50;
+    private int lg_x_max = 25;
+    private int lg_y_max = 10;
     
-    private String[][] local_grid = new String[lg_x_max][lg_y_max];
+    private String[][] local_grid = new String[lg_y_max][lg_x_max];
     
     public Letter() {
         // empty constructoror
-        StericWalker();
+        StericWalker(); // create local grid
     }
     
     private void StericWalker() {
-        for (int i = 0; i < lg_x_max; i++) {
-            for(int j = 0; j < lg_y_max; j++) {
-                local_grid[i][j] = ".";
+    // Creates an empty local grid
+        for (int y = 0; y < lg_y_max; y++) {
+            for(int x = 0; x < lg_x_max; x++) {
+                local_grid[y][x] = ".";
             }
         }
     }
     
     public void printLocalGrid() {
-        for (int i = 0; i < lg_x_max; i++) {
-            for(int j = 0; j < lg_y_max; j++) {
-                System.out.print(local_grid[i][j]);
+        for (int y = 0; y < lg_y_max; y++) {
+            for(int x = 0; x < lg_x_max; x++) {
+                System.out.print(local_grid[y][x]);
             }
             System.out.print("\n");
         }
