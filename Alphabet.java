@@ -64,15 +64,14 @@ public class Alphabet {
             }
             // End Letter name
             
-            // Create letter Force
-            Force f1 = new Force();
+            
 
             String test = "A";
             
             // Assign letter properties
             letter.name = letter_name;
             letter.desc = test;
-            letter.force = f1;
+            //letter.force = f1;
             
             // Add letters to Alphabet array list
             letters.add(letter);
@@ -88,7 +87,11 @@ public class Alphabet {
         System.out.println("Printing Alphabet: ");
         
         System.out.print("Name\tES_Mag\tBond_In\tBond_Out\tES_Geom\tVW_mag\n");
+        
         for (Letter letter : letters) {
+            System.out.print(letter.name + "\n");
+            System.out.print(letter.force.ES_mag + "\n");
+            
             System.out.print(   letter.name + "\t" 
                                 + letter.force.ES_mag + "\t"
                                 + letter.force.bond_in + "\t"

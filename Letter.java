@@ -21,8 +21,8 @@
 
 class Letter {
     
+    public Force force = new Force();
     public String name;
-    public Force force;
     public String desc;
 
     // Local Letter Grid

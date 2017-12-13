@@ -51,7 +51,6 @@ public class Force {
         
         VW_mag = m1.randomRange(1,10);
     }
-    
 
     
 }
