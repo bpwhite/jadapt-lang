@@ -46,7 +46,7 @@ public class TestAdapt {
                             num_mols,
                             max_mol_size);
         e1.alphabet.printLetters();
-        // e1.printMolecules();
+        e1.printMolecules();
         
         
     }

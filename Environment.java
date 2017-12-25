@@ -21,16 +21,42 @@
 import java.util.ArrayList;
 
 public class Environment {
+    // Environments are the unit of simulation
+    // Unique ID for environment
+    public int env_id;
+    private int env_id_max = 9999999;
+    // Ensure environment ID's are unique
+    public static ArrayList<Integer> env_ids = new ArrayList<>();
     
     // Container for the evolutionary alphabet
     public Alphabet alphabet = new Alphabet();
+    
     // Container for molecules present in the environment
     public ArrayList<Molecule> molecules = new ArrayList<Molecule>();
-
+    
+    // Constructor for Environment class
+    public Environment() {
+        int unique_id = 0; // flag for unique env_id check
+        MathAdapt m1 = new MathAdapt();
+        // Check ID list
+        
+        while(unique_id == 0) {
+            int temp_id = m1.randomRange(1, env_id_max);
+            if(env_ids.contains(temp_id)) {
+                continue; // contains ID # already
+            }
+        
+            // Add assigned ID to list
+            env_id = temp_id;
+            env_ids.add(env_id);
+            unique_id = 1;
+        }
+    }
     
     public void SpawnEnvironment(   int alph_len, 
                                     int num_mols,
                                     int max_mol_size) {
+        System.out.print("Environment ID: " + env_id + "\n");
         // Generate Alphabet
         alphabet.GenerateAlphabet(alph_len);      // spawn letters
         
@@ -38,11 +64,9 @@ public class Environment {
         for(int i = 0; i < num_mols; i++) {
             // Initialize empty molecule
             Molecule molecule = new Molecule();
-            MathAdapt m1 = new MathAdapt();
             
-            int mol_size = m1.randomRange(1, max_mol_size);
             // Assign letters to molecule
-            molecule.SpawnMolecule(alphabet, mol_size);
+            molecule.SpawnMolecule(alphabet, max_mol_size);
             molecules.add(molecule);
         }
     }

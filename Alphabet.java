@@ -50,26 +50,18 @@ public class Alphabet {
     }
     
     void printLetters() {
+        // Print a list of letters in the Alphabet
         System.out.println("Printing Alphabet: ");
         
         System.out.print("Name\tES_Mag\tBond_In\tBond_Out\tES_Geom\tVW_mag\n");
         
         for (Letter letter : letters) {
-            //System.out.print(letter.name + "\n");
-            //System.out.print(letter.force.ES_mag + "\n");
-            
-            System.out.print(   letter.name + "\t" 
-                                + letter.force.ES_mag + "\t"
-                                + letter.force.bond_in + "\t"
-                                + letter.force.bond_out + "\t"
-                                + letter.force.ES_geom + "\t"
-                                + letter.force.VW_mag
-                                + "\n");
-            //letter.printLocalGrid();
+            letter.printLetter();
         }
     }
     
     public Letter drawLetter() {
+        // Draw a random letter from the Alphabet
         Letter random_letter = letters.get(new SecureRandom().nextInt(letters.size()));
         
         return random_letter;

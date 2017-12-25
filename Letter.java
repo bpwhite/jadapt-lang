@@ -51,11 +51,11 @@ class Letter {
             // Generate a random alphanumeric string of 1
             String temp_name = m1.randomString(1);
             // Check if temp_name has been assigned yet
-            
             if(assigned_ltr.contains(temp_name)) {
-                break; // Contains the name already, retry.
+                continue; // Contains the name already, retry.
             }
- 
+            
+
             // Add letter to assigned list
             name = temp_name;
             assigned_ltr.add(name);
@@ -70,6 +70,16 @@ class Letter {
                 local_grid[y][x] = ".";
             }
         }
+    }
+    
+    public void printLetter() {
+        System.out.print(   name + "\t" 
+                    + force.ES_mag + "\t"
+                    + force.bond_in + "\t"
+                    + force.bond_out + "\t"
+                    + force.ES_geom + "\t"
+                    + force.VW_mag
+                    + "\n");
     }
     
     public void printLocalGrid() {

@@ -24,10 +24,16 @@ public class Molecule {
     private ArrayList<Letter> genome = new ArrayList<Letter>();
     private String molecule_id;
     
-
-    public void SpawnMolecule(Alphabet alphabet, int len) {
+    // Create a molecule (grouped letters) within
+    // a random size range.
+    public void SpawnMolecule(  Alphabet alphabet,
+                                int max_mol_size) {
+        MathAdapt m1 = new MathAdapt();
         
-        for (int i = 0; i < len; i++) {
+        // Number of start letters in the molecule
+        int mol_size = m1.randomRange(1, max_mol_size);
+        
+        for (int i = 0; i < mol_size; i++) {
             genome.add(alphabet.drawLetter());
         }
         
