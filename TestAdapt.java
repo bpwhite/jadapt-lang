@@ -32,7 +32,7 @@ public class TestAdapt {
         // Environmental Parameters
         
         // Number of letters in the alphabet
-        int alphabet_length = 3;
+        int alphabet_length = 5;
         // Number of initial molecules to generate
         int num_mols = 5;
         int min_mol_size = 3;
@@ -46,7 +46,7 @@ public class TestAdapt {
                             num_mols,
                             max_mol_size);
         e1.alphabet.printLetters();
-        e1.printMolecules();
+        // e1.printMolecules();
         
         
     }

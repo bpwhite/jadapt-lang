@@ -35,44 +35,10 @@ public class Alphabet {
                                 max_length + " letters.");
             System.exit(0);
         }
-        // Random string generator
-        MathAdapt m1 = new MathAdapt();
-        
-        String[] assigned_letters = new String[len];
-        String letter_name = new String();
-        
+
         // Create len # of letters
         for (int i = 0; i < len; i++) {
             Letter letter = new Letter();
-            
-            // Create Letter name
-            // Ensure letter names are not duplicated
-            int unique_string = 0;
-            while(unique_string == 0) {
-                
-                // Generate letter name
-                letter_name = m1.randomString(1);
-                
-                for (int j = 0; j < assigned_letters.length; j++) {
-                    if(letter_name == assigned_letters[j]) {
-                        break;
-                    }
-                }
-                // Add letter to assigned list
-                assigned_letters[i] = letter_name;
-                unique_string = 1;
-            }
-            // End Letter name
-            
-            
-
-            String test = "A";
-            
-            // Assign letter properties
-            letter.name = letter_name;
-            letter.desc = test;
-            //letter.force = f1;
-            
             // Add letters to Alphabet array list
             letters.add(letter);
             num_letters = i;
@@ -89,8 +55,8 @@ public class Alphabet {
         System.out.print("Name\tES_Mag\tBond_In\tBond_Out\tES_Geom\tVW_mag\n");
         
         for (Letter letter : letters) {
-            System.out.print(letter.name + "\n");
-            System.out.print(letter.force.ES_mag + "\n");
+            //System.out.print(letter.name + "\n");
+            //System.out.print(letter.force.ES_mag + "\n");
             
             System.out.print(   letter.name + "\t" 
                                 + letter.force.ES_mag + "\t"
@@ -99,7 +65,7 @@ public class Alphabet {
                                 + letter.force.ES_geom + "\t"
                                 + letter.force.VW_mag
                                 + "\n");
-            letter.printLocalGrid();
+            //letter.printLocalGrid();
         }
     }
     

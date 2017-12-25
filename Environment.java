@@ -34,6 +34,7 @@ public class Environment {
         // Generate Alphabet
         alphabet.GenerateAlphabet(alph_len);      // spawn letters
         
+        // Generate molecules from alphabet
         for(int i = 0; i < num_mols; i++) {
             // Initialize empty molecule
             Molecule molecule = new Molecule();
