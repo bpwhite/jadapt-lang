@@ -41,7 +41,6 @@ public class TestAdapt {
         // Spawn a new environment
         Environment e1 = new Environment();
         
-        // 
         e1.SpawnEnvironment(alphabet_length, 
                             num_mols,
                             max_mol_size);

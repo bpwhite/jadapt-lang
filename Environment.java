@@ -23,10 +23,10 @@ import java.util.ArrayList;
 public class Environment {
     // Environments are the unit of simulation
     // Unique ID for environment
-    public int env_id;
+    public String env_id;
     private int env_id_max = 9999999;
     // Ensure environment ID's are unique
-    public static ArrayList<Integer> env_ids = new ArrayList<>();
+    public static ArrayList<String> env_ids = new ArrayList<>();
     
     // Container for the evolutionary alphabet
     public Alphabet alphabet = new Alphabet();
@@ -38,8 +38,8 @@ public class Environment {
     public Environment() {
         int unique_id = 0; // flag for unique env_id check
         MathAdapt m1 = new MathAdapt();
-        // Check ID list
         
+        // Generate a unique ID for the environment
         while(unique_id == 0) {
             int temp_id = m1.randomRange(1, env_id_max);
             if(env_ids.contains(temp_id)) {
@@ -47,7 +47,7 @@ public class Environment {
             }
         
             // Add assigned ID to list
-            env_id = temp_id;
+            env_id = "E" + Integer.toString(temp_id);
             env_ids.add(env_id);
             unique_id = 1;
         }

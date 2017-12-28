@@ -21,16 +21,20 @@
 import java.util.ArrayList;
 
 class Letter {
+    // debug
+    private int verbose = 1;
     
     public Force force = new Force();
     public String name;
     public String desc;
     
+    // List to hold assigned letter string names
     private static ArrayList<String> assigned_ltr = new ArrayList<String>();
     
     // Local Letter Grid
-    private int lg_x_max = 25;
-    private int lg_y_max = 10;
+    private int grid_dims = 50; // ensure LOCAL grid is square
+    private int lg_x_max = grid_dims;
+    private int lg_y_max = grid_dims;
     
     private String[][] local_grid = new String[lg_y_max][lg_x_max];
     
@@ -38,6 +42,7 @@ class Letter {
         // Constructor for a new letter
         StericWalker(); // create local grid
         GenerateName(); // assign a unique alphanumeric letter
+        GenerateOctagon(0.1); // Generate shape
         String test = "A";
         desc = test;
     }
@@ -54,8 +59,6 @@ class Letter {
             if(assigned_ltr.contains(temp_name)) {
                 continue; // Contains the name already, retry.
             }
-            
-
             // Add letter to assigned list
             name = temp_name;
             assigned_ltr.add(name);
@@ -70,6 +73,43 @@ class Letter {
                 local_grid[y][x] = ".";
             }
         }
+    }
+    
+    private void GenerateOctagon(double fill) {
+        // List of points
+        ArrayList<Double[]> points = new ArrayList<>();
+
+        
+        // Diameter fills grid to a %
+        double diameter = grid_dims - fill*grid_dims;
+        double midpoint = grid_dims/2;
+        double radius = diameter/2;
+                
+        // Internal angle
+        double polygon_sides = 8;
+        double internal_a = 360/polygon_sides;
+        double edge_length = Math.sqrt( Math.pow(radius, 2) + Math.pow(radius, 2) 
+                                        - 2*(radius)*(radius)*Math.cos(internal_a*Math.PI/180));
+        
+        if(verbose == 1) {
+            System.out.print("Diameter: " + diameter + "\n" +
+                            "Midpoint: " + midpoint + "\n" +
+                            "Radius: " + radius + "\n" +
+                            "Internal A: " + internal_a + "\n" +
+                            "Edge length: " + edge_length + "\n");
+        }
+        double[] p0 = new double[2];
+        p0[0] = midpoint;           // midpoint x
+        p0[1] = midpoint;           // midpoint y
+        
+        double[] p1 = new double[2];
+        p1[0] = midpoint + radius;  // p1 x
+        p1[1] = midpoint;           // p1 y
+        
+        double[] p2 = new double[2];
+        //p1[0] = 
+        //p1[1] = 
+        
     }
     
     public void printLetter() {
