@@ -89,6 +89,7 @@ class Letter {
         // Internal angle
         double polygon_sides = 8;
         double internal_a = 360/polygon_sides;
+        double external_a = (180-internal_a)/2;
         double edge_length = Math.sqrt( Math.pow(radius, 2) + Math.pow(radius, 2) 
                                         - 2*(radius)*(radius)*Math.cos(internal_a*Math.PI/180));
         
@@ -97,6 +98,7 @@ class Letter {
                             "Midpoint: " + midpoint + "\n" +
                             "Radius: " + radius + "\n" +
                             "Internal A: " + internal_a + "\n" +
+                            "External_A: " + external_a + "\n" +
                             "Edge length: " + edge_length + "\n");
         }
         double[] p0 = new double[2];
@@ -110,8 +112,9 @@ class Letter {
         points.add(p1);
         
         double[] p2 = new double[2];
-        //p1[0] = 
-        //p1[1] = 
+        p2[0] = Math.sin(internal_a/2*Math.PI/180)*edge_length;
+        p2[1] = Math.sin(external_a*Math.PI/180)*edge_length;
+        points.add(p2);
         
         for (double[] point : points) {
             System.out.print(point[0] + "," + point[1] + "\n");
