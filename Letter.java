@@ -19,6 +19,7 @@
     
 */
 import java.util.ArrayList;
+import java.util.List;
 
 class Letter {
     // debug
@@ -77,7 +78,7 @@ class Letter {
     
     private void GenerateOctagon(double fill) {
         // List of points
-        ArrayList<Double[]> points = new ArrayList<>();
+        List<double[]> points = new ArrayList<double[]>();
 
         
         // Diameter fills grid to a %
@@ -101,15 +102,20 @@ class Letter {
         double[] p0 = new double[2];
         p0[0] = midpoint;           // midpoint x
         p0[1] = midpoint;           // midpoint y
+        points.add(p0);
         
         double[] p1 = new double[2];
         p1[0] = midpoint + radius;  // p1 x
         p1[1] = midpoint;           // p1 y
+        points.add(p1);
         
         double[] p2 = new double[2];
         //p1[0] = 
         //p1[1] = 
         
+        for (double[] point : points) {
+            System.out.print(point[0] + "," + point[1] + "\n");
+        }
     }
     
     public void printLetter() {
