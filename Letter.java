@@ -153,7 +153,7 @@ class Letter {
         points.add(p8);
         
         System.out.print("Octagon points: \n");
-        int point_counter = 1;
+        int point_counter = 0;
         for (double[] point : points) {
             // Round to nearest integer
             System.out.print(   "[p"+point_counter + "]\t" + 
