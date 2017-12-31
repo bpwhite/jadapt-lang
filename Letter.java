@@ -33,9 +33,9 @@ class Letter {
     private static ArrayList<String> assigned_ltr = new ArrayList<String>();
     
     // Local Letter Grid
-    private int grid_dims = 50; // ensure LOCAL grid is square
-    private int lg_x_max = grid_dims;
-    private int lg_y_max = grid_dims;
+    private int grid_width = 50; // ensure LOCAL grid is square
+    private int lg_x_max = grid_width;
+    private int lg_y_max = grid_width;
     
     private String[][] local_grid = new String[lg_y_max][lg_x_max];
     
@@ -82,8 +82,9 @@ class Letter {
 
         
         // Diameter fills grid to a %
-        double diameter = grid_dims - fill*grid_dims;
-        double midpoint = grid_dims/2;
+        double diameter = grid_width - fill*grid_width;
+        double midpoint = grid_width/2;
+        double width = grid_width;
         double radius = diameter/2;
                 
         // Internal angle
@@ -92,13 +93,18 @@ class Letter {
         double external_a = (180-internal_a)/2;
         double edge_length = Math.sqrt( Math.pow(radius, 2) + Math.pow(radius, 2) 
                                         - 2*(radius)*(radius)*Math.cos(internal_a*Math.PI/180));
+        double B = Math.sin(internal_a/2*Math.PI/180)*edge_length;
+        double Z = Math.sin(external_a*Math.PI/180)*edge_length;
         
         if(verbose == 1) {
             System.out.print("Diameter: " + diameter + "\n" +
                             "Midpoint: " + midpoint + "\n" +
                             "Radius: " + radius + "\n" +
+                            "Width: " + width + "\n" + 
                             "Internal A: " + internal_a + "\n" +
                             "External_A: " + external_a + "\n" +
+                            "B: " + B + "\n" +
+                            "Z: " + Z + "\n" +
                             "Edge length: " + edge_length + "\n");
         }
         double[] p0 = new double[2];
@@ -112,12 +118,48 @@ class Letter {
         points.add(p1);
         
         double[] p2 = new double[2];
-        p2[0] = Math.sin(internal_a/2*Math.PI/180)*edge_length;
-        p2[1] = Math.sin(external_a*Math.PI/180)*edge_length;
+        p2[0] = midpoint + radius - B;
+        p2[1] = midpoint + Z;
         points.add(p2);
         
+        double[] p3 = new double[2];
+        p3[0] = midpoint;
+        p3[1] = midpoint + radius;
+        points.add(p3);
+        
+        double[] p4 = new double[2];
+        p4[0] = midpoint - radius + B;
+        p4[1] = midpoint + Z;
+        points.add(p4);
+        
+        double[] p5 = new double[2];
+        p5[0] = midpoint - radius;
+        p5[1] = midpoint;
+        points.add(p5);
+        
+        double[] p6 = new double[2];
+        p6[0] = midpoint - radius + B;
+        p6[1] = midpoint - Z;
+        points.add(p6);
+        
+        double[] p7 = new double[2];
+        p7[0] = midpoint;
+        p7[1] = midpoint - radius;
+        points.add(p7);
+        
+        double[] p8 = new double[2];
+        p8[0] = midpoint + radius - B;
+        p8[1] = midpoint - Z;
+        points.add(p8);
+        
+        System.out.print("Octagon points: \n");
+        int point_counter = 1;
         for (double[] point : points) {
-            System.out.print(point[0] + "," + point[1] + "\n");
+            // Round to nearest integer
+            System.out.print(   "[p"+point_counter + "]\t" + 
+                                point[0] + "\t" + 
+                                point[1] + "\n");
+            point_counter++;
         }
     }
     
